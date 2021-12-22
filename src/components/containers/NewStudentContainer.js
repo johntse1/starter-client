@@ -36,7 +36,9 @@ class NewStudentContainer extends Component {
             email: this.state.email,
             gpa: this.state.gpa
         };
-        
+        if(this.state.campusId==null){
+          this.state.campusId==0;
+        }
         let newStudent = await this.props.addStudent(student);
 
         this.setState({
