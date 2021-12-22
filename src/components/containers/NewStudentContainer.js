@@ -28,7 +28,6 @@ class NewStudentContainer extends Component {
 
     handleSubmit = async event => {
         event.preventDefault();
-
         let student = {
             firstname: this.state.firstname,
             lastname: this.state.lastname,
@@ -37,10 +36,10 @@ class NewStudentContainer extends Component {
             gpa: this.state.gpa
         };
         if(this.state.campusId==null){
-          this.state.campusId==0;
+          this.state.campusId=1;
+          this.state.campus.name="None";
         }
-        let newStudent = await this.props.addStudent(student);
-
+        let newStudent = await this.props.addStudent(student); 
         this.setState({
           firstname: "", 
           lastname: "", 
